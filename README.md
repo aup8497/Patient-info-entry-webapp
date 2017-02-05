@@ -1,7 +1,6 @@
 # patient-info-entry-webapp
 A webapp which takes in Patient information and logs it into the database.A patient directory with local search functionality to search patients based on their attributes.
 
-
 ## How to use
 
 To start the mongo local database server
@@ -14,7 +13,7 @@ $ npm bin/www
 ```
 
 Here are some snapshots of the webapp and the terminal.
-[id1]: https://www.dropbox.com/s/c86uwtotx1msnbg/patient-entry-firstScreen.png?dl=0
+[id1]: https://www.dropbox.com/s/c86uwtotx1msnbg/patient-entry-firstScreen.png
 ![alt text][id1]
 
 [id2]: https://github.com/aup8497/patient-info-entry-webapp/blob/master/patientEntryFirstScreen.png
