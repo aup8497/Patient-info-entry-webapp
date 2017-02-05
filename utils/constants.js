@@ -1,5 +1,6 @@
 var cons = {};
 
+// initializing all the constants ,so that it will be use full to change the program accordingly if needed.
 cons.DBName = "patientsDB";
 cons.UserCollection = "users";
 cons.host = "localhost";

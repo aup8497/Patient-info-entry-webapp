@@ -18,6 +18,7 @@ var app = angular.module('patientSubmit',[]);
 
                 }else{
 
+                    //form validated (all information is correct)
                       var  firstname= $scope.firstName ;
                        var  lastname= $scope.lastName ;	
                         var age= $scope.age ;
@@ -26,7 +27,7 @@ var app = angular.module('patientSubmit',[]);
                        var phone=$scope.phone ;
                        var info = $scope.pInfo;
 
-
+                    //creating the data to be put in as we are making the scope variables to null
                     var dto={
                         firstname: firstname ,
                         lastname: lastname ,
@@ -37,6 +38,7 @@ var app = angular.module('patientSubmit',[]);
                         info: info
 
                     };
+
                     $scope.firstName ="";
                     $scope.lastName ="";
                     $scope.age ="";
@@ -45,7 +47,7 @@ var app = angular.module('patientSubmit',[]);
                     $scope.phone ="";
                     $scope.pInfo ="";
 
-                    //this next line is sending the data to the server
+                    //posting the data to saves.js where it handles this to save data in the data base.
                     $http.post('/data/save', dto).success(function (data, status) {
                         console.log("Successfully saved!!" + "\nStatus : " + status + "\nData : " + data);
                         alert("Successfully Registered!!");

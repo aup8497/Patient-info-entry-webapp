@@ -1,9 +1,12 @@
+//this is the main client which handles the database.
+
 var mongoClient = require('mongodb').MongoClient;
 var cons = require('./constants');
 var ObjectID = require("mongodb").ObjectID;
 
 var Client = {};
 
+//connects with the db everytime a request has come
 Client.getDB = function (cb, dbName) {
     if(dbName == null){
         dbName = cons.DBName;
@@ -22,7 +25,7 @@ Client.getDB = function (cb, dbName) {
     });
 };
 
-//
+//getting data from the database
 Client.getFromDB = function (dbName, collName, cb){
     Client.getDB(function (db) {
         var coll = db.collection(collName);
@@ -31,6 +34,7 @@ Client.getFromDB = function (dbName, collName, cb){
     }, dbName);
 };
 
+//inserting dbObj into the database.
 Client.insertInDB = function (dbName, collName, dbObj, callback) {
     Client.getDB(function (db) {
         var coll = db.collection(collName);
@@ -38,7 +42,7 @@ Client.insertInDB = function (dbName, collName, dbObj, callback) {
     }, dbName);
 };
 
-
+//removing a given query from the database.
 Client.deleteInDB = function (dbName, collName, query, callback) {
     Client.getDB(function(db){
         console.log(query);

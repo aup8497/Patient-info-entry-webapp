@@ -1,6 +1,8 @@
 /**
  * Created by akshayuprabhu on 3/2/17.
  */
+
+// this has many express routers which gets the data from the javascript and sends it to the database.
 var mongoHelper = require('../utils/mongoHelper');
 var cons = require('../utils/constants');
 var ObjectId = require('mongodb').ObjectID;
@@ -9,6 +11,7 @@ var ObjectId = require('mongodb').ObjectID;
 var express = require('express');
 var router = express.Router();
 
+//router to add the patient data into the database.
 router.route('/save')
     .post(function (req, res, next) {
 
@@ -36,7 +39,7 @@ router.route('/save')
         });
     });
 
-
+//router to get the data from the server and send it to the frontend.
 router.route('/get')
     .get(function (req, res, next) {
 
@@ -49,7 +52,7 @@ router.route('/get')
         });
     });
 
-
+//router to remove the patient data into the database.
 router.route('/remove')
     .post(function (req, res, next) {
 
