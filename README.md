@@ -12,9 +12,7 @@ To start the webapp
 $ npm bin/www
 ```
 
-Here are some snapshots of the webapp and the terminal.
-[id1]: https://www.dropbox.com/s/c86uwtotx1msnbg/patient-entry-firstScreen.png
-![alt text][id1]
+![alt tag](https://github.com/aup8497/patient-info-entry-webapp/blob/master/patient-entry-firstScreen.png)
 
 [id2]: https://github.com/aup8497/patient-info-entry-webapp/blob/master/patientEntryFirstScreen.png
 ![alt text][id2]
