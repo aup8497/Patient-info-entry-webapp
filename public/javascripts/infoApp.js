@@ -34,23 +34,26 @@ app.controller( 'InfoController' ,function($scope , $http){  //the parameters ar
     //     }
     // ];
     //
+    
+        $scope.removeRow = function () {
+            
+        }
 
         function getPatients(){
-            console.log('patients');
+            console.log('patients came here to get patients by get');
             $http.get('data/get').then(function(response){
                 $scope.patients=(response.data);
             });
             //this is an API call
-
-
         }
-
-
-
         getPatients();
 
-    $scope.removeRow = function(phoneNumber){
-        
+    $scope.removeRow = function(patient){
+        console.log('removing a patient');
+        $http.post('data/remove',patient).then(function(response){
+            // $scope.patients=(response.data);
+            getPatients();
+        });
     };
 
 

@@ -1,5 +1,6 @@
 var mongoClient = require('mongodb').MongoClient;
 var cons = require('./constants');
+var ObjectID = require("mongodb").ObjectID;
 
 var Client = {};
 
@@ -38,11 +39,12 @@ Client.insertInDB = function (dbName, collName, dbObj, callback) {
 };
 
 
-// Client.deleteInDB = function (dbName, collName, query, callback) {
-//     Client.getDB(function(db){
-//         var coll = db.collection(collName);
-//         coll.remove(query, null, callback);
-//     }, dbName);
-// };
+Client.deleteInDB = function (dbName, collName, query, callback) {
+    Client.getDB(function(db){
+        console.log(query);
+        var coll = db.collection(collName);
+        coll.remove(query, null, callback);
+    }, dbName);
+};
 
 module.exports = Client;

@@ -3,72 +3,69 @@
     <head>
 
         <!--Always lode angular first and then all other scripts-->
-		<!--<link rel="stylesheet" href="stylesheets/css/bootstrap.min.css">-->
-		<!--<script src="../javascripts/bootstrap.min.js"></script>-->
-		<!--<script src="http://www.iclubz.com/js/chosen.jquery.js"></script>-->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+		<script src="../javascripts/angular.min.js"></script>
+		<script src="../javascripts/angular-route.min.js"></script>
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>-->
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>-->
         <script type="text/javascript" src="javascripts/infoApp.js"></script>
 
 
     </head>
     <!--<style>body{font-family:"Arial";background-color:#E2E2DC}</style>-->
     <body ng-app="patientInfo" ng-controller="InfoController"  >
+		<div style="padding-left: 10px">
+			<h2>Patient Directory</h2>
 
-		<h2>Patient Directory</h2>
+			<div class="col-lg-6">
+				<div class="input-group">
+				  <input type="text" ng-model="searchKeyword" class="form-control" placeholder="Search for patients...">
+				  <span class="input-group-btn">
+					<button class="btn btn-default" type="button">Search</button>
+				  </span>
+				</div><!-- /input-group -->
+			  </div><!-- /.col-lg-6 -->
 
-
-<div class="col-lg-6">
-    <div class="input-group">
-      <input type="text" ng-model="searchKeyword" class="form-control" placeholder="Search for patients...">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Search</button>
-      </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-
-		<br>
-
-            <table class="table">
-	<tr>
-		<th>Name
-		</th>
-		<th>Age
-		</th>
-		<th>Date Of Birth
-		</th>
-		<th>Gender
-		</th>
-		<th>Phone
-		</th>
-		<th>Other Info
-		</th>
-<!-- 		<th>Gender
-		</th>
- -->
- 	</tr>
-	<tr ng-repeat="patient in patients  | filter: searchKeyword ">
-		<td>
-		{{patient.firstname}} {{patient.lastname}}
-		</td>
-		<td>{{patient.age}}
-		</td>
-		<td>{{patient.dob}}
-		</td>
-		<td>{{patient.gender}}
-		</td>
-		<td>{{patient.phone}}
-		</td>
-		<td>{{patient.otherInfo}}
-		</td>
-
-	</tr>
-
-</table>
-        <!-- </div> -->
+			<br>
+			<br>
+			<table class="table">
+				<tr>
+					<th>Name
+					</th>
+					<th>Age
+					</th>
+					<th>Date Of Birth
+					</th>
+					<th>Gender
+					</th>
+					<th>Phone
+					</th>
+					<th>Other Info
+					</th>
+					<th>Action
+					</th>
+				</tr>
+				<tr ng-repeat="patient in patients  | filter: searchKeyword ">
+					<td>
+					{{patient.firstname}} {{patient.lastname}}
+					</td>
+					<td>{{patient.age}}
+					</td>
+					<td>{{patient.dob}}
+					</td>
+					<td>{{patient.gender}}
+					</td>
+					<td>{{patient.phone}}
+					</td>
+					<td>{{patient.otherInfo}}
+					</td>
+					<td>
+						<input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(patient)"/>
+					</td>
+				</tr>
+			</table>
+         </div>
     </body>
 </html>
 
