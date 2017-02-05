@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+
+        <!--Always lode angular first and then all other scripts-->
+		<!--<link rel="stylesheet" href="stylesheets/css/bootstrap.min.css">-->
+		<!--<script src="../javascripts/bootstrap.min.js"></script>-->
+		<!--<script src="http://www.iclubz.com/js/chosen.jquery.js"></script>-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+        <script type="text/javascript" src="javascripts/infoApp.js"></script>
+
+
+    </head>
+    <!--<style>body{font-family:"Arial";background-color:#E2E2DC}</style>-->
+    <body ng-app="patientInfo" ng-controller="InfoController"  >
+
+		<h2>Patient Directory</h2>
+
+
+<div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" ng-model="searchKeyword" class="form-control" placeholder="Search for patients...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Search</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+
+		<br>
+
+            <table class="table">
+	<tr>
+		<th>Name
+		</th>
+		<th>Age
+		</th>
+		<th>Date Of Birth
+		</th>
+		<th>Gender
+		</th>
+		<th>Phone
+		</th>
+		<th>Other Info
+		</th>
+<!-- 		<th>Gender
+		</th>
+ -->
+ 	</tr>
+	<tr ng-repeat="patient in patients  | filter: searchKeyword ">
+		<td>
+		{{patient.firstname}} {{patient.lastname}}
+		</td>
+		<td>{{patient.age}}
+		</td>
+		<td>{{patient.dob}}
+		</td>
+		<td>{{patient.gender}}
+		</td>
+		<td>{{patient.phone}}
+		</td>
+		<td>{{patient.otherInfo}}
+		</td>
+
+	</tr>
+
+</table>
+        <!-- </div> -->
+    </body>
+</html>
+
+
+
+<!-- 
+Screen 1: A patient entry screen with fields like 
+firstname,
+ lastname,
+  age,
+   dob,
+    gender (dropdown),
+     phone,
+      free text information.
+       A submit button should validate and put the information in the database. Validation of fields are mandatory.
+Screen 2: A patient directory which shows a list of patients, with local search functionality based on patient name.
+
+ -->
+
