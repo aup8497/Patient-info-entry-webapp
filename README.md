@@ -1,11 +1,13 @@
 # patient-info-entry-webapp
 A webapp which takes in Patient information and logs it into the database.A patient directory with local search functionality to search patients based on their attributes.
-
+<br>
 This webapp has two screens:
+<br>
 Screen 1: A patient entry screen with fields like firstname,lastname,age,dob,gender (dropdown),phone,free text information.
        A submit button validates and puts the information in the mongo database. Validation of fields are done.
+<br>
 Screen 2: A patient directory which shows a list of patients, with local search functionality based on patient name.
-
+<br>
 Note: To go to second screen just concatenate '/patients' to the url.
 
 
