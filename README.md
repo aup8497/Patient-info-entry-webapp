@@ -19,6 +19,9 @@ Here are some snapshots of the webapp and the terminal.
 
 ![alt tag](https://github.com/aup8497/patient-info-entry-webapp/blob/master/patient-info-secondScreen.png)
 
+##Requirements
+  - npm
+  - mongoDB
 
 ##The MIT LICENSE
 
