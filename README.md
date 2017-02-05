@@ -14,14 +14,14 @@ $ npm bin/www
 ```
 
 Here are some snapshots of the webapp and the terminal.
-[id]: https://www.dropbox.com/s/c86uwtotx1msnbg/patient-entry-firstScreen.png?dl=0
-![alt text][id]
+[id1]: https://www.dropbox.com/s/c86uwtotx1msnbg/patient-entry-firstScreen.png?dl=0
+![alt text][id1]
 
-[id]: https://github.com/aup8497/patient-info-entry-webapp/blob/master/patientEntryFirstScreen.png
-![alt text][id]
+[id2]: https://github.com/aup8497/patient-info-entry-webapp/blob/master/patientEntryFirstScreen.png
+![alt text][id2]
 
-[id]: https://github.com/aup8497/patient-info-entry-webapp/blob/master/patient-info-secondScreen.png
-![alt text][id]
+[id3]: https://github.com/aup8497/patient-info-entry-webapp/blob/master/patient-info-secondScreen.png
+![alt text][id3]
  
 
 ##The MIT LICENSE
